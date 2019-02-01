@@ -11,7 +11,23 @@ class Carousel {
         this.imgList = Array.from(this.images).map(image => new Slide(image));
     }
 
-    
+
+}
+
+class Slide {
+    constructor(image) {
+        this.image = image;
+        this.index = image.dataset.image;
+        this.slide = document.querySelector(`div[data-image="${this.index}"]`);
+    }
+
+    active() {
+        this.slide.style.display = "block";
+    }
+
+    inactive() {
+        this.card.style.display = "none";
+    }
 }
 
 let carousel = document.querySelectorAll('.carousel');
