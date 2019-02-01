@@ -8,7 +8,10 @@ class Carousel {
         this.images[this.index].style.display = "block";
         this.left.addEventListener('click', () => this.moveLeft());
         this.right.addEventListener('click', () => this.moveRight());
+        this.imgList = Array.from(this.images).map(image => new Slide(image));
     }
+
+    
 }
 
 let carousel = document.querySelectorAll('.carousel');
